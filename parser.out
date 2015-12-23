@@ -1,0 +1,339 @@
+Created by PLY version 3.6 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> OPAREN expression CPAREN
+Rule 2     expression -> OPAREN CPAREN
+Rule 3     expression -> expression expression
+Rule 4     expression -> INT
+Rule 5     expression -> FLOAT
+Rule 6     expression -> STR
+Rule 7     expression -> BOOL
+Rule 8     expression -> SPINT
+Rule 9     expression -> SPFLOAT
+Rule 10    expression -> FUNC
+
+Terminals, with rules where they appear
+
+BOOL                 : 7
+CPAREN               : 1 2
+FLOAT                : 5
+FUNC                 : 10
+INT                  : 4
+OPAREN               : 1 2
+SPFLOAT              : 9
+SPINT                : 8
+STR                  : 6
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 1 3 3 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . OPAREN expression CPAREN
+    (2) expression -> . OPAREN CPAREN
+    (3) expression -> . expression expression
+    (4) expression -> . INT
+    (5) expression -> . FLOAT
+    (6) expression -> . STR
+    (7) expression -> . BOOL
+    (8) expression -> . SPINT
+    (9) expression -> . SPFLOAT
+    (10) expression -> . FUNC
+
+    OPAREN          shift and go to state 4
+    INT             shift and go to state 3
+    FLOAT           shift and go to state 9
+    STR             shift and go to state 1
+    BOOL            shift and go to state 6
+    SPINT           shift and go to state 2
+    SPFLOAT         shift and go to state 8
+    FUNC            shift and go to state 5
+
+    expression                     shift and go to state 7
+
+state 1
+
+    (6) expression -> STR .
+
+    CPAREN          reduce using rule 6 (expression -> STR .)
+    OPAREN          reduce using rule 6 (expression -> STR .)
+    INT             reduce using rule 6 (expression -> STR .)
+    FLOAT           reduce using rule 6 (expression -> STR .)
+    STR             reduce using rule 6 (expression -> STR .)
+    BOOL            reduce using rule 6 (expression -> STR .)
+    SPINT           reduce using rule 6 (expression -> STR .)
+    SPFLOAT         reduce using rule 6 (expression -> STR .)
+    FUNC            reduce using rule 6 (expression -> STR .)
+    $end            reduce using rule 6 (expression -> STR .)
+
+
+state 2
+
+    (8) expression -> SPINT .
+
+    CPAREN          reduce using rule 8 (expression -> SPINT .)
+    OPAREN          reduce using rule 8 (expression -> SPINT .)
+    INT             reduce using rule 8 (expression -> SPINT .)
+    FLOAT           reduce using rule 8 (expression -> SPINT .)
+    STR             reduce using rule 8 (expression -> SPINT .)
+    BOOL            reduce using rule 8 (expression -> SPINT .)
+    SPINT           reduce using rule 8 (expression -> SPINT .)
+    SPFLOAT         reduce using rule 8 (expression -> SPINT .)
+    FUNC            reduce using rule 8 (expression -> SPINT .)
+    $end            reduce using rule 8 (expression -> SPINT .)
+
+
+state 3
+
+    (4) expression -> INT .
+
+    CPAREN          reduce using rule 4 (expression -> INT .)
+    OPAREN          reduce using rule 4 (expression -> INT .)
+    INT             reduce using rule 4 (expression -> INT .)
+    FLOAT           reduce using rule 4 (expression -> INT .)
+    STR             reduce using rule 4 (expression -> INT .)
+    BOOL            reduce using rule 4 (expression -> INT .)
+    SPINT           reduce using rule 4 (expression -> INT .)
+    SPFLOAT         reduce using rule 4 (expression -> INT .)
+    FUNC            reduce using rule 4 (expression -> INT .)
+    $end            reduce using rule 4 (expression -> INT .)
+
+
+state 4
+
+    (1) expression -> OPAREN . expression CPAREN
+    (2) expression -> OPAREN . CPAREN
+    (1) expression -> . OPAREN expression CPAREN
+    (2) expression -> . OPAREN CPAREN
+    (3) expression -> . expression expression
+    (4) expression -> . INT
+    (5) expression -> . FLOAT
+    (6) expression -> . STR
+    (7) expression -> . BOOL
+    (8) expression -> . SPINT
+    (9) expression -> . SPFLOAT
+    (10) expression -> . FUNC
+
+    CPAREN          shift and go to state 10
+    OPAREN          shift and go to state 4
+    INT             shift and go to state 3
+    FLOAT           shift and go to state 9
+    STR             shift and go to state 1
+    BOOL            shift and go to state 6
+    SPINT           shift and go to state 2
+    SPFLOAT         shift and go to state 8
+    FUNC            shift and go to state 5
+
+    expression                     shift and go to state 11
+
+state 5
+
+    (10) expression -> FUNC .
+
+    CPAREN          reduce using rule 10 (expression -> FUNC .)
+    OPAREN          reduce using rule 10 (expression -> FUNC .)
+    INT             reduce using rule 10 (expression -> FUNC .)
+    FLOAT           reduce using rule 10 (expression -> FUNC .)
+    STR             reduce using rule 10 (expression -> FUNC .)
+    BOOL            reduce using rule 10 (expression -> FUNC .)
+    SPINT           reduce using rule 10 (expression -> FUNC .)
+    SPFLOAT         reduce using rule 10 (expression -> FUNC .)
+    FUNC            reduce using rule 10 (expression -> FUNC .)
+    $end            reduce using rule 10 (expression -> FUNC .)
+
+
+state 6
+
+    (7) expression -> BOOL .
+
+    CPAREN          reduce using rule 7 (expression -> BOOL .)
+    OPAREN          reduce using rule 7 (expression -> BOOL .)
+    INT             reduce using rule 7 (expression -> BOOL .)
+    FLOAT           reduce using rule 7 (expression -> BOOL .)
+    STR             reduce using rule 7 (expression -> BOOL .)
+    BOOL            reduce using rule 7 (expression -> BOOL .)
+    SPINT           reduce using rule 7 (expression -> BOOL .)
+    SPFLOAT         reduce using rule 7 (expression -> BOOL .)
+    FUNC            reduce using rule 7 (expression -> BOOL .)
+    $end            reduce using rule 7 (expression -> BOOL .)
+
+
+state 7
+
+    (0) S' -> expression .
+    (3) expression -> expression . expression
+    (1) expression -> . OPAREN expression CPAREN
+    (2) expression -> . OPAREN CPAREN
+    (3) expression -> . expression expression
+    (4) expression -> . INT
+    (5) expression -> . FLOAT
+    (6) expression -> . STR
+    (7) expression -> . BOOL
+    (8) expression -> . SPINT
+    (9) expression -> . SPFLOAT
+    (10) expression -> . FUNC
+
+    OPAREN          shift and go to state 4
+    INT             shift and go to state 3
+    FLOAT           shift and go to state 9
+    STR             shift and go to state 1
+    BOOL            shift and go to state 6
+    SPINT           shift and go to state 2
+    SPFLOAT         shift and go to state 8
+    FUNC            shift and go to state 5
+
+    expression                     shift and go to state 12
+
+state 8
+
+    (9) expression -> SPFLOAT .
+
+    CPAREN          reduce using rule 9 (expression -> SPFLOAT .)
+    OPAREN          reduce using rule 9 (expression -> SPFLOAT .)
+    INT             reduce using rule 9 (expression -> SPFLOAT .)
+    FLOAT           reduce using rule 9 (expression -> SPFLOAT .)
+    STR             reduce using rule 9 (expression -> SPFLOAT .)
+    BOOL            reduce using rule 9 (expression -> SPFLOAT .)
+    SPINT           reduce using rule 9 (expression -> SPFLOAT .)
+    SPFLOAT         reduce using rule 9 (expression -> SPFLOAT .)
+    FUNC            reduce using rule 9 (expression -> SPFLOAT .)
+    $end            reduce using rule 9 (expression -> SPFLOAT .)
+
+
+state 9
+
+    (5) expression -> FLOAT .
+
+    CPAREN          reduce using rule 5 (expression -> FLOAT .)
+    OPAREN          reduce using rule 5 (expression -> FLOAT .)
+    INT             reduce using rule 5 (expression -> FLOAT .)
+    FLOAT           reduce using rule 5 (expression -> FLOAT .)
+    STR             reduce using rule 5 (expression -> FLOAT .)
+    BOOL            reduce using rule 5 (expression -> FLOAT .)
+    SPINT           reduce using rule 5 (expression -> FLOAT .)
+    SPFLOAT         reduce using rule 5 (expression -> FLOAT .)
+    FUNC            reduce using rule 5 (expression -> FLOAT .)
+    $end            reduce using rule 5 (expression -> FLOAT .)
+
+
+state 10
+
+    (2) expression -> OPAREN CPAREN .
+
+    CPAREN          reduce using rule 2 (expression -> OPAREN CPAREN .)
+    OPAREN          reduce using rule 2 (expression -> OPAREN CPAREN .)
+    INT             reduce using rule 2 (expression -> OPAREN CPAREN .)
+    FLOAT           reduce using rule 2 (expression -> OPAREN CPAREN .)
+    STR             reduce using rule 2 (expression -> OPAREN CPAREN .)
+    BOOL            reduce using rule 2 (expression -> OPAREN CPAREN .)
+    SPINT           reduce using rule 2 (expression -> OPAREN CPAREN .)
+    SPFLOAT         reduce using rule 2 (expression -> OPAREN CPAREN .)
+    FUNC            reduce using rule 2 (expression -> OPAREN CPAREN .)
+    $end            reduce using rule 2 (expression -> OPAREN CPAREN .)
+
+
+state 11
+
+    (1) expression -> OPAREN expression . CPAREN
+    (3) expression -> expression . expression
+    (1) expression -> . OPAREN expression CPAREN
+    (2) expression -> . OPAREN CPAREN
+    (3) expression -> . expression expression
+    (4) expression -> . INT
+    (5) expression -> . FLOAT
+    (6) expression -> . STR
+    (7) expression -> . BOOL
+    (8) expression -> . SPINT
+    (9) expression -> . SPFLOAT
+    (10) expression -> . FUNC
+
+    CPAREN          shift and go to state 13
+    OPAREN          shift and go to state 4
+    INT             shift and go to state 3
+    FLOAT           shift and go to state 9
+    STR             shift and go to state 1
+    BOOL            shift and go to state 6
+    SPINT           shift and go to state 2
+    SPFLOAT         shift and go to state 8
+    FUNC            shift and go to state 5
+
+    expression                     shift and go to state 12
+
+state 12
+
+    (3) expression -> expression expression .
+    (3) expression -> expression . expression
+    (1) expression -> . OPAREN expression CPAREN
+    (2) expression -> . OPAREN CPAREN
+    (3) expression -> . expression expression
+    (4) expression -> . INT
+    (5) expression -> . FLOAT
+    (6) expression -> . STR
+    (7) expression -> . BOOL
+    (8) expression -> . SPINT
+    (9) expression -> . SPFLOAT
+    (10) expression -> . FUNC
+
+  ! shift/reduce conflict for OPAREN resolved as shift
+  ! shift/reduce conflict for INT resolved as shift
+  ! shift/reduce conflict for FLOAT resolved as shift
+  ! shift/reduce conflict for STR resolved as shift
+  ! shift/reduce conflict for BOOL resolved as shift
+  ! shift/reduce conflict for SPINT resolved as shift
+  ! shift/reduce conflict for SPFLOAT resolved as shift
+  ! shift/reduce conflict for FUNC resolved as shift
+    CPAREN          reduce using rule 3 (expression -> expression expression .)
+    $end            reduce using rule 3 (expression -> expression expression .)
+    OPAREN          shift and go to state 4
+    INT             shift and go to state 3
+    FLOAT           shift and go to state 9
+    STR             shift and go to state 1
+    BOOL            shift and go to state 6
+    SPINT           shift and go to state 2
+    SPFLOAT         shift and go to state 8
+    FUNC            shift and go to state 5
+
+  ! OPAREN          [ reduce using rule 3 (expression -> expression expression .) ]
+  ! INT             [ reduce using rule 3 (expression -> expression expression .) ]
+  ! FLOAT           [ reduce using rule 3 (expression -> expression expression .) ]
+  ! STR             [ reduce using rule 3 (expression -> expression expression .) ]
+  ! BOOL            [ reduce using rule 3 (expression -> expression expression .) ]
+  ! SPINT           [ reduce using rule 3 (expression -> expression expression .) ]
+  ! SPFLOAT         [ reduce using rule 3 (expression -> expression expression .) ]
+  ! FUNC            [ reduce using rule 3 (expression -> expression expression .) ]
+
+    expression                     shift and go to state 12
+
+state 13
+
+    (1) expression -> OPAREN expression CPAREN .
+
+    CPAREN          reduce using rule 1 (expression -> OPAREN expression CPAREN .)
+    OPAREN          reduce using rule 1 (expression -> OPAREN expression CPAREN .)
+    INT             reduce using rule 1 (expression -> OPAREN expression CPAREN .)
+    FLOAT           reduce using rule 1 (expression -> OPAREN expression CPAREN .)
+    STR             reduce using rule 1 (expression -> OPAREN expression CPAREN .)
+    BOOL            reduce using rule 1 (expression -> OPAREN expression CPAREN .)
+    SPINT           reduce using rule 1 (expression -> OPAREN expression CPAREN .)
+    SPFLOAT         reduce using rule 1 (expression -> OPAREN expression CPAREN .)
+    FUNC            reduce using rule 1 (expression -> OPAREN expression CPAREN .)
+    $end            reduce using rule 1 (expression -> OPAREN expression CPAREN .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for OPAREN in state 12 resolved as shift
+WARNING: shift/reduce conflict for INT in state 12 resolved as shift
+WARNING: shift/reduce conflict for FLOAT in state 12 resolved as shift
+WARNING: shift/reduce conflict for STR in state 12 resolved as shift
+WARNING: shift/reduce conflict for BOOL in state 12 resolved as shift
+WARNING: shift/reduce conflict for SPINT in state 12 resolved as shift
+WARNING: shift/reduce conflict for SPFLOAT in state 12 resolved as shift
+WARNING: shift/reduce conflict for FUNC in state 12 resolved as shift
